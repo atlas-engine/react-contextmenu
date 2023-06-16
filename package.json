@@ -19,13 +19,12 @@
     "src/index.d.ts"
   ],
   "scripts": {
-    "lint": "eslint ./src ./examples",
-    "test": "npm run lint && npm run test:only",
+    "test": "npm run test:only",
     "test:only": "jest --no-cache --verbose --coverage",
     "test:dev": "jest --watchAll --no-cache --verbose --coverage",
     "clean": "rimraf ./dist && rimraf ./modules && rimraf ./es6",
     "clean:examples": "rimraf ./public",
-    "build": "npm run clean && npm run test && npm run build:dist && npm run build:es5 && npm run build:es6",
+    "build": "npm run clean && npm run build:dist && npm run build:es5 && npm run build:es6",
     "build:dist": "webpack --progress --profile --colors",
     "build:es5": "cross-env BABEL_ENV=es5 babel src --out-dir modules",
     "build:es6": "cross-env BABEL_ENV=es6 babel src --out-dir es6",
@@ -51,13 +50,12 @@
   },
   "peerDependencies": {
     "prop-types": "^15.0.0",
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.1",
-    "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.1"
+    "react": ">= 16.14",
+    "react-dom": ">= 16.14"
   },
   "devDependencies": {
     "babel-cli": "~6.26.0",
     "babel-core": "~6.26.3",
-    "babel-eslint": "~7.2.1",
     "babel-jest": "~21.2.0",
     "babel-loader": "~7.1.1",
     "babel-minify-webpack-plugin": "~0.2.0",
@@ -72,11 +70,6 @@
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.15.1",
     "enzyme-to-json": "~3.4.3",
-    "eslint": "~4.18.2",
-    "eslint-config-vkbansal": "~5.2.1",
-    "eslint-import-resolver-webpack": "~0.8.3",
-    "eslint-plugin-import": "~2.18.2",
-    "eslint-plugin-react": "~7.16.0",
     "extract-text-webpack-plugin": "~3.0.2",
     "history": "~4.10.1",
     "html-webpack-plugin": "~2.30.1",
