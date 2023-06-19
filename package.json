@@ -24,7 +24,7 @@
     "test:dev": "jest --watchAll --no-cache --verbose --coverage",
     "clean": "rimraf ./dist && rimraf ./modules && rimraf ./es6",
     "clean:examples": "rimraf ./public",
-    "build": "npm run build:dist && npm run build:es5 && npm run build:es6",
+    "build": "npm run clean && npm run build:dist && npm run build:es5 && npm run build:es6",
     "build:dist": "webpack --progress --profile --colors",
     "build:es5": "cross-env BABEL_ENV=es5 babel src --out-dir modules",
     "build:es6": "cross-env BABEL_ENV=es6 babel src --out-dir es6",
@@ -46,6 +46,15 @@
   },
   "homepage": "https://github.com/vkbansal/react-contextmenu",
   "dependencies": {
+    "classnames": "^2.2.5",
+    "object-assign": "^4.1.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.0.0",
+    "react": ">= 16.14",
+    "react-dom": ">= 16.14"
+  },
+  "devDependencies": {
     "babel-cli": "~6.26.0",
     "babel-core": "~6.26.3",
     "babel-jest": "~21.2.0",
@@ -56,18 +65,8 @@
     "babel-preset-react": "~6.24.1",
     "babel-preset-stage-2": "~6.24.1",
     "babel-register": "~6.26.0",
-    "classnames": "^2.2.5",
-    "cross-env": "~6.0.3",
-    "object-assign": "^4.1.0",
-    "webpack": "~3.12.0"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.0.0",
-    "react": ">= 16.14",
-    "react-dom": ">= 16.14"
-  },
-  "devDependencies": {
     "coveralls": "~3.0.3",
+    "cross-env": "~6.0.3",
     "css-loader": "~0.28.7",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.15.1",
@@ -84,7 +83,8 @@
     "react-router-dom": "~5.0.1",
     "react-test-renderer": "~16.8.4",
     "rimraf": "~3.0.0",
-    "style-loader": "~0.19.0"
+    "style-loader": "~0.19.0",
+    "webpack": "~3.12.0"
   },
   "jest": {
     "setupFiles": [
