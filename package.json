@@ -16,9 +16,7 @@
     "es6",
     "modules",
     "dist",
-    "src/index.d.ts",
-    "webpack.config.js",
-    ".babelrc"
+    "src/index.d.ts"
   ],
   "scripts": {
     "test": "npm run test:only",
