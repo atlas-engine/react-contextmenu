@@ -55,6 +55,7 @@ declare module "react-contextmenu" {
           ): void;
         }
       | Function;
+    children?: React.ReactNode;
   }
 
   export interface SubMenuProps {
@@ -75,6 +76,7 @@ declare module "react-contextmenu" {
           ): void;
         }
       | Function;
+    children?: React.ReactNode;
   }
 
   export interface ConnectMenuProps {
